@@ -4,14 +4,14 @@ import logo from '../../assets/logo.png';
 import {Link} from 'react-scroll';
 import { IoIosMenu } from "react-icons/io";
 import { HiXMark } from "react-icons/hi2";
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, delay } from 'framer-motion';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav className="navbar">
-      <Link className="homePage" to="intro" spy={true} offset={-100}>
+      <a className="homePage" href="/">
         <span className="logoSection">
           <img src={logo} alt="logo" className="logo" />
           <div className="name">
@@ -21,11 +21,11 @@ const Navbar = () => {
             <span className="ta">Ta</span>
           </div>
         </span>
-      </Link>
+      </a>
 
       <ul className="navbarLinks">
         {["about", "work", "contact"].map((item) => (
-          <li key={`link-${item}`} className={item === 'work' ? 'workClass' : ''}>
+          <li key={`link-${item}`}>
             <a href={`#${item}`}>{item}</a>
             <div />
           </li>

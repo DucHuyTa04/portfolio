@@ -24,6 +24,7 @@
 .homePage{
     cursor: pointer;
     margin-bottom: 12px;
+    color: var(--white-color);
     &:hover{
         color: var(--dark-green-color);
         .codeBy{
@@ -38,6 +39,9 @@
         .ta{
             transform: translateX(-490%);
         }
+        .logo {
+            transform: rotate(180deg) rotateX(180deg) rotateY(180deg);
+          }
     }
 
     .logoSection{
@@ -46,10 +50,9 @@
         align-items: center;
 
         .logo{
-            object-fit: cover;
-            height: 3rem;
-            width: 4rem;
-            padding-right: 1rem;
+            width: 2.25rem;
+            margin-right: 0.7rem;
+            transition: transform 0.5s ease-in-out;
         }
 
         .name{

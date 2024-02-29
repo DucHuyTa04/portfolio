@@ -2,7 +2,7 @@ import React from 'react';
 import './about.css';
 import { MdOutlineWeb } from "react-icons/md";
 import { AiFillRobot } from "react-icons/ai";
-import portrait from "../../assets/imageAbout.png"
+import portrait from "../../assets/imageAbout.jpg"
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
