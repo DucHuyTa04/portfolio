@@ -1,0 +1,131 @@
+#intro{
+    margin: 0 auto;
+    @media screen and (max-width: 700px) {
+        height: 100vh;
+    }
+    @media screen and (min-width: 1700px) {
+        height: 103vh;
+    }
+}
+
+
+.introContent{
+    position: relative;
+    top: 38vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .hanger{
+        display: flex;
+        align-items: center;
+
+        .locationText{
+            background-color:  var(--dark-green-color);
+            color: var(--white-color);
+            padding: 1.2rem 1rem 1.2rem 2.5rem;
+            
+            span{
+                font-weight: 300;
+            }
+            border: none;
+
+                @media screen and (max-width: 900px) {
+                    padding: 1.2rem 0rem 1.2rem 2rem;
+            }
+        }
+
+        .btnLocationWrap{
+            background-color: var(--dark-green-color);
+            padding: 1rem;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+
+            .btnLocation{
+                background-color: var(--primary-color);
+                padding: 0.6685rem ;
+                border-radius: 50%;
+
+                @media screen and (max-width: 700px){
+                    background-color: rgba(255, 255, 255, 0);
+                }
+            }
+
+            .iconLocation{
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    fill: var(--dark-green-color);
+                    cursor: pointer;
+                    
+                }
+            }
+
+            @media screen and (max-width: 700px){
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+
+    .shortIntro{
+        position: relative;
+        top:-2vh;
+        padding-right: 4.2vw;
+        font-weight: 300;
+        font-size: clamp(1.2em, 2.3vw, 3em);
+    }
+
+    @media screen and (max-width: 700px) {
+        top: 75vh;
+        flex-direction: row-reverse;
+        width: 95%;
+        .locationText{
+            display: none;
+        }
+
+        .shortIntro {
+            margin-left: 6vw;
+        }
+    }
+}
+
+.bigName {
+    position: absolute;
+    bottom: 9%; 
+    font-size: clamp(3.2em, 14vw, 14em);
+    font-weight: 500;
+    left: 50%; 
+    transform: translateX(-50%); 
+    white-space: nowrap; 
+    text-align: center; 
+
+
+    @media screen and (max-width: 700px) {
+        position: absolute;
+        bottom: 30%;
+}
+}
+
+.imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    z-index: -1;
+    overflow: hidden;
+    .bigImage{
+        object-fit: cover;
+        height: 95vh;
+        @media screen and (max-width: 700px) {
+            height: 85vh;
+        }
+    }
+    @media screen and (max-width: 700px) {
+        position: relative;
+        top:5vh;
+    }
+
+    @media screen and (min-width: 1700px) {
+        position: relative;
+        top:-7vh;
+    }
+}

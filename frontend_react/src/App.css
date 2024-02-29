@@ -1,0 +1,40 @@
+.app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-text{
+    text-align: left;
+    letter-spacing: 0.5px;
+    font-size: clamp(1.15em,1.45vw, 3em);
+    font-weight: 300;
+}
+
+.carousel{
+    overflow: hidden;
+    padding: 4vh 0 0 0;
+    margin: 0;
+    white-space: nowrap;
+
+    .title {
+        display: inline-block;
+        font-size: clamp(10em, 13vw, 15em);
+        font-weight: 900;
+        animation: slide 200s infinite linear;
+    
+        & span{
+            margin: 2rem;
+            letter-spacing: -7px;
+        }
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
