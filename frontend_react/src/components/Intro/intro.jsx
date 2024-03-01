@@ -9,11 +9,7 @@ const intro = () => {
       <div className="introContent">
         <div className="hanger">
           <span className="locationText">
-            <span>Located in</span>
-            <br />
-            <span>Montreal</span>
-            <br />
-            <span>Canada</span>
+            <span>Located in Montreal Canada</span>
           </span>
           <div className="btnLocationWrap">
             <div className="btnLocation">
