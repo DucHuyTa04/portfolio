@@ -86,7 +86,7 @@
     list-style: none;
 
     .workClass{
-        padding-left: 0.4rem;
+        margin-left: 0.4rem;
     }
 
     li{
@@ -251,4 +251,9 @@
     @media screen and (min-width: 700px){
         display: none;
     }
+}
+
+.navbarLinks li.active a {
+    padding-bottom: 1.5px;
+    border-bottom: 1.5px solid var(--white-color);
 }

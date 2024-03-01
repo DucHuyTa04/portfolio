@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './navbar.css';
 import logo from '../../assets/logo.png';
 import {Link} from 'react-scroll';
@@ -8,10 +8,34 @@ import { motion, AnimatePresence, delay } from 'framer-motion';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["about", "work", "contact"];
+
+      const currentSection = sections.find((sectionId) => {
+        const el = document.getElementById(sectionId);
+        if (!el) return false;
+        const scrollPosition = window.scrollY;
+        return (
+          el.offsetTop <= scrollPosition + window.innerHeight / 3 &&
+          el.offsetTop + el.offsetHeight > scrollPosition + window.innerHeight / 3
+        );
+      });
+  
+      setActiveSection(currentSection || '');
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <nav className="navbar">
-      <a className="homePage" href="/">
+      <a className="homePage" href="/" >
         <span className="logoSection">
           <img src={logo} alt="logo" className="logo" />
           <div className="name">
@@ -25,8 +49,9 @@ const Navbar = () => {
 
       <ul className="navbarLinks">
         {["about", "work", "contact"].map((item) => (
-          <li key={`link-${item}`}>
-            <a href={`#${item}`}>{item}</a>
+          <li key={`link-${item}`} className={activeSection === item ? 'active' : ''}>
+            <a href={`#${item}`}
+              className={item === 'work' ? 'workClass' : ''}>{item}</a>
             <div />
           </li>
         ))}
