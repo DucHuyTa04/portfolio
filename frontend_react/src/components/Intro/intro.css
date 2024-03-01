@@ -1,13 +1,16 @@
 #intro{
-    margin: 0 auto;
-    @media screen and (max-width: 700px) {
-        height: 100vh;
-    }
-    @media screen and (min-width: 1700px) {
-        height: 103vh;
-    }
+    height: 100vh;
+    background-image: url("../../assets/imageHome.png");
+    background-size: 70vh;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }
 
+.wordContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .introContent{
     position: relative;
@@ -68,14 +71,14 @@
 
     .shortIntro{
         position: relative;
-        top:-2vh;
+        top:-1rem;
         padding-right: 4.2vw;
         font-weight: 300;
         font-size: clamp(1.2em, 2.3vw, 3em);
     }
 
     @media screen and (max-width: 700px) {
-        top: 75vh;
+        top: 78vh;
         flex-direction: row-reverse;
         width: 95%;
         .locationText{
@@ -89,43 +92,12 @@
 }
 
 .bigName {
-    position: absolute;
-    bottom: 9%; 
+    position: relative;
+    top: 48vh;
     font-size: clamp(3.2em, 14vw, 14em);
     font-weight: 500;
     left: 50%; 
     transform: translateX(-50%); 
     white-space: nowrap; 
     text-align: center; 
-
-
-    @media screen and (max-width: 700px) {
-        position: absolute;
-        bottom: 30%;
-}
-}
-
-.imageContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    z-index: -1;
-    overflow: hidden;
-    .bigImage{
-        object-fit: cover;
-        height: 95vh;
-        @media screen and (max-width: 700px) {
-            height: 85vh;
-        }
-    }
-    @media screen and (max-width: 700px) {
-        position: relative;
-        top:5vh;
-    }
-
-    @media screen and (min-width: 1700px) {
-        position: relative;
-        top:-7vh;
-    }
 }

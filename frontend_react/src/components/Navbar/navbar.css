@@ -165,10 +165,10 @@
         bottom: 0;
         right: 0;
         z-index: 5;
-        padding: 2.5vh 2.5vw;
+        padding: 1.25rem 2.5vw;
 
         width: 40%;
-        height: 110vh;
+        height: 100vh;
 
         display: flex;
         justify-content: center;
@@ -184,7 +184,7 @@
             width:35px;
             height:35px;
             color: var(--white-color);
-            margin: 1.5vh 2vw;
+            margin: 1rem 2vw;
         }
 
         ul{
@@ -200,7 +200,7 @@
             flex-direction: column;
 
             li{
-                margin:3.5vh 0 3.5vh 2vw;
+                margin:1.7rem 0 1.7rem 2vw;
                 cursor: pointer;
                 position: relative;
 

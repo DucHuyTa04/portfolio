@@ -1,6 +1,6 @@
 #about{
     background-color: var(--secondary-color);
-    padding-bottom: 12vh;
+    padding-bottom: 6rem;
 }
 
 /* Start the body part */
@@ -12,7 +12,7 @@
         flex: 1;
         box-sizing: border-box;
         position: relative;
-        top: -2vh;
+        top: -1rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -20,20 +20,20 @@
 
         & > span {
             flex: 0;
-            padding: 4vh 4vw 0 8vw;
+            padding: 2rem 4vw 0 8vw;
         }
 
         .slogan{
             font-size: clamp(2em,3vw, 5em);
             font-weight: bold;
-            padding: 8vh 4vw 0 8vw;
+            padding: 4rem 4vw 0 8vw;
         }
 
         .buttonsContainer {
-            padding: 8vh 4vw 0 6vw;
+            padding: 4rem 4vw 0 6vw;
             display: flex;
             justify-content: center;
-            gap: 6vw;
+            gap: 3rem;
             width: 100%;
         
             button {
@@ -83,7 +83,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 8vh 6vw 0 0;
+        padding: 4rem 6vw 0 0;
 
         & .imgIntro {
             max-width: 80%;
@@ -107,21 +107,21 @@
     .textSkills{
         font-size: clamp(2em,3vw, 5em);
         font-weight: 700;
-        margin: 8vh 0 0 8vw;
+        margin: 4rem 0 0 8vw;
     }
     
     .webSkills{
         width:100%;
         display: flex;
         justify-content: center;
-        padding-top: 4vh;
+        padding-top: 2rem;
         @media screen and (max-width:700px) {
             flex-direction: column;
             align-items: center;
         }
         .webSkills2{
             @media screen and (max-width:700px) {
-                padding-top:2vh;
+                padding-top:1rem;
             }
         }
     }
@@ -130,7 +130,7 @@
         width:100%;
         display: flex;
         justify-content: center;
-        padding-top: 2vh;
+        padding-top: 1rem;
     }
     
     .iconSkill{

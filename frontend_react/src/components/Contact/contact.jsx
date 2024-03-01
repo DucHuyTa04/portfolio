@@ -102,17 +102,7 @@ const Contact = () => {
       <div className="app__flex contactBody">
       <p className="headText">{currentTime}</p>
       <p className="p-text headTextDetails" >{messageBasedOnTime}</p>
-      
-      <div className="contactCards">
-        <div className="contactCard">
-          <IoMail />
-          <a href="mailto:taduchuy04@gmail.com" className="p-text">taduchuy04@gmail.com</a>
-        </div>
-        <div className="contactCard">
-          <IoPhonePortrait />
-          <a href="tel:+1 (438) 979-5679" className="p-text">+1 (438) 979-5679</a>
-        </div>
-      </div>
+    
 
     {! isFormSubmitted ?
         <div className="contactForm app__flex">
