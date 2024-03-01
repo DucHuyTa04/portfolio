@@ -9,13 +9,30 @@ import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import './App.css';
 
+import imageHome from "../src/assets/imageHome.png";
+import imageAbout from "../src/assets/imageAbout.jpg";
+
 function App() {
   const [loading, setLoading] = useState(true);
+  const preloadImages = (imageUrls) => {
+    imageUrls.forEach((imageUrl) => {
+      const img = new Image();
+      img.src = imageUrl;
+    });
+  };
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
+    const imageUrls = [
+      imageHome,
+      imageAbout,
+    ];
+    preloadImages(imageUrls);
+
+    const timer = setTimeout(() => {
+      setLoading(false); 
     }, 2000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
