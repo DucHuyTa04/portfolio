@@ -1,25 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion'
-import { urlFor, client } from '../../client';
+import { urlFor } from '../../client';
 import "./work.css";
 
-const Works = () => {
+const Works = ({ works }) => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({y:0, opacity:1});
-  const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
+  const [filterWork, setFilterWork] = useState(works);
 
 
   useEffect(() => {
-    const query = '*[_type == "works"]';
-
-    client.fetch(query)
-      .then((data) => {
-        setWorks(data);
-        setFilterWork(data);
-      })
-  }, [])
+    setFilterWork(works);
+  }, [works]); 
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -31,7 +24,7 @@ const Works = () => {
       if(item === 'All'){
         setFilterWork(works);
       } else{
-        setFilterWork(works.filter((work) => work.tags.includes(item)))
+        setFilterWork(works.filter((work) => work.tags && work.tags.includes(item)));
       }
     }, 500);
   }
@@ -81,8 +74,8 @@ const Works = () => {
         >
           {filterWork.map((work,index) => (
             <div className="workItem app__flex" key={index}>
-              <div className="workImg app__flex">
-                <img src={urlFor(work.imgUrl)} alt="work.name" />
+            <div className="workImg app__flex">
+              <img src={urlFor(work.imgUrl).url()} alt={work.title} />
 
                 <motion.div
                   whileHover={{opacity: [0,1]}}

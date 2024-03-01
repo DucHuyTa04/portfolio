@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { client, urlFor } from './client'; 
 import LoadingScreen from './components/LoadingScreen/load';
 import Navbar from "./components/Navbar/navbar";
 import Intro from "./components/Intro/intro";
@@ -9,11 +9,15 @@ import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import './App.css';
 
+//import images
 import imageHome from "../src/assets/imageHome.png";
 import imageAbout from "../src/assets/imageAbout.jpg";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [works, setWorks] = useState([]); // State to hold preloaded work data
+
+  // Preload images
   const preloadImages = (imageUrls) => {
     imageUrls.forEach((imageUrl) => {
       const img = new Image();
@@ -22,17 +26,28 @@ function App() {
   };
 
   useEffect(() => {
-    const imageUrls = [
-      imageHome,
-      imageAbout,
-    ];
-    preloadImages(imageUrls);
+    // Preload statically imported images
+    const staticImageUrls = [imageHome, imageAbout];
+    preloadImages(staticImageUrls);
 
-    const timer = setTimeout(() => {
-      setLoading(false); 
-    }, 2000);
+    // Fetch work data from Sanity and preload images associated with each work item
+    const fetchWorkDataAndPreloadImages = async () => {
+      const query = '*[_type == "works"]';
+      const data = await client.fetch(query);
 
-    return () => clearTimeout(timer);
+      // Extract image URLs from the fetched data
+      const workImageUrls = data.map(work => urlFor(work.imgUrl).url());
+      preloadImages(workImageUrls); // Preload work images
+
+      setWorks(data); // Store fetched work data in state
+    };
+
+    fetchWorkDataAndPreloadImages().then(() => {
+      // Set a timeout to simulate loading time
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    });
   }, []);
 
   return (
@@ -44,7 +59,7 @@ function App() {
         <Navbar/>
         <Intro/>
         <About/>
-        <Work/>
+        <Work works={works}/>
         <Contact/>
         <Footer/>
       </div>

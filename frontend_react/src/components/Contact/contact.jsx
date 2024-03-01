@@ -15,26 +15,41 @@ const Contact = () => {
 
   useEffect(() => {
     const updateCurrentTimeAndMessage = () => {
-      const now = new Date();
-      const hours = now.getHours();
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      const formattedHours = hours % 12 || 12; 
-      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const day = days[now.getDay()];
-      setCurrentTime(`It is currently ${formattedHours} ${ampm} on a ${day} for me.`);
+      // Create a Date object in Montreal's time zone
+      const now = new Date().toLocaleString("en-US", {timeZone: "America/Montreal"});
+      const montrealTime = new Date(now);
+  
+      // Format the time
+      const timeFormatter = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+        timeZone: 'America/Montreal',
+      });
+  
+      // Format the day
+      const dayFormatter = new Intl.DateTimeFormat('en-US', {
+        weekday: 'long',
+        timeZone: 'America/Montreal',
+      });
+  
+      const formattedTime = timeFormatter.format(montrealTime);
+      const formattedDay = dayFormatter.format(montrealTime);
 
-      const isNightTime = (hours >= 23 || hours < 9);
-
+      setCurrentTime(`It is currently ${formattedTime} on a ${formattedDay} for me.`);
+  
+      const hours = montrealTime.getHours();
+      const isNightTime = hours >= 23 || hours < 9;
       const timeBasedMessage = isNightTime
         ? "A good sleep promises readiness for the next morning, but any messages are welcome."
         : "Sounds like a wonderful time to start working. Let me know how I can help you, I’m listening.";
-
-        setMessageBasedOnTime(timeBasedMessage);
+  
+      setMessageBasedOnTime(timeBasedMessage);
     };
-
-    updateCurrentTimeAndMessage(); 
-    const intervalId = setInterval(updateCurrentTimeAndMessage, 60000); 
-
+  
+    updateCurrentTimeAndMessage();
+    const intervalId = setInterval(updateCurrentTimeAndMessage, 60000); // Update every minute
+  
     return () => clearInterval(intervalId);
   }, []);
 
