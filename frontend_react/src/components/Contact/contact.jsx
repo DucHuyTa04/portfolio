@@ -15,41 +15,36 @@ const Contact = () => {
 
   useEffect(() => {
     const updateCurrentTimeAndMessage = () => {
-      // Create a Date object in Montreal's time zone
-      const now = new Date().toLocaleString("en-US", {timeZone: "America/Montreal"});
-      const montrealTime = new Date(now);
-  
-      // Format the time
       const timeFormatter = new Intl.DateTimeFormat('en-US', {
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,
         timeZone: 'America/Montreal',
       });
-  
-      // Format the day
+      
       const dayFormatter = new Intl.DateTimeFormat('en-US', {
         weekday: 'long',
         timeZone: 'America/Montreal',
       });
-  
-      const formattedTime = timeFormatter.format(montrealTime);
-      const formattedDay = dayFormatter.format(montrealTime);
+
+      const now = new Date();
+      const formattedTime = timeFormatter.format(now);
+      const formattedDay = dayFormatter.format(now);
 
       setCurrentTime(`It is currently ${formattedTime} on a ${formattedDay} for me.`);
-  
-      const hours = montrealTime.getHours();
-      const isNightTime = hours >= 23 || hours < 9;
+
+      const hours = new Date().getHours();
+      const isNightTime = /PM$/.test(formattedTime) ? hours === 11 || hours < 9 : hours < 9;
       const timeBasedMessage = isNightTime
         ? "A good sleep promises readiness for the next morning, but any messages are welcome."
         : "Sounds like a wonderful time to start working. Let me know how I can help you, I’m listening.";
-  
+
       setMessageBasedOnTime(timeBasedMessage);
     };
-  
+
     updateCurrentTimeAndMessage();
     const intervalId = setInterval(updateCurrentTimeAndMessage, 60000); // Update every minute
-  
+
     return () => clearInterval(intervalId);
   }, []);
 
