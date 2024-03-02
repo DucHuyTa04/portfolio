@@ -18,35 +18,43 @@ const Contact = () => {
       const timeFormatter = new Intl.DateTimeFormat('en-US', {
         hour: 'numeric',
         minute: 'numeric',
-        hour12: true,
+        hour12: true, // Display time in AM/PM format for the user
         timeZone: 'America/Montreal',
       });
       
+      const calculationTimeFormatter = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric',
+        hour12: false, // Use 24-hour format for calculation
+        timeZone: 'America/Montreal',
+      });
+  
       const dayFormatter = new Intl.DateTimeFormat('en-US', {
         weekday: 'long',
         timeZone: 'America/Montreal',
       });
-
+  
       const now = new Date();
-      const formattedTime = timeFormatter.format(now);
+      const formattedTime = timeFormatter.format(now); // User-visible time
+      const calculationTime = calculationTimeFormatter.format(now); // Time for calculation
       const formattedDay = dayFormatter.format(now);
-
+  
       setCurrentTime(`It is currently ${formattedTime} on a ${formattedDay} for me.`);
-
-      const hours = new Date().getHours();
-      const isNightTime = /PM$/.test(formattedTime) ? hours === 11 || hours < 9 : hours < 9;
+  
+      const hourForCalculation = parseInt(calculationTime.split(':')[0], 10); // Extract hour for calculation
+      // Determine if it's night time based on 24-hour format
+      const isNightTime = hourForCalculation < 9 || hourForCalculation >= 23;
       const timeBasedMessage = isNightTime
         ? "A good sleep promises readiness for the next morning, but any messages are welcome."
         : "Sounds like a wonderful time to start working. Let me know how I can help you, I’m listening.";
-
+  
       setMessageBasedOnTime(timeBasedMessage);
     };
-
+  
     updateCurrentTimeAndMessage();
     const intervalId = setInterval(updateCurrentTimeAndMessage, 60000); // Update every minute
-
+  
     return () => clearInterval(intervalId);
-  }, []);
+  }, []);  
 
   const{ name, email, message } = formData;
   const handleChangeInput = (e) => {
