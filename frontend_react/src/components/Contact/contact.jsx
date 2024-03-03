@@ -144,7 +144,7 @@ const Contact = () => {
       </div>
       :
       <div>
-        <h3 className='textAfterSubmit'>Thank you for getting in touch!</h3>
+        <p className='textAfterSubmit'>Thank you for getting in touch!</p>
       </div>}
       </div>
     </section>

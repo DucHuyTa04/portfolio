@@ -73,3 +73,8 @@
         margin: 4rem 0;
     }
 }
+
+.textAfterSubmit{
+    margin: 6rem 8vw 3rem 8vw;
+    font-size: clamp(1.4em, 2.2vw, 3em);
+}
