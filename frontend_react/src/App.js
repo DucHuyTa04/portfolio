@@ -10,8 +10,8 @@ import Footer from "./components/Footer/footer";
 import './App.css';
 
 //import images
-import imageHome from "../src/assets/imageHome.png";
-import imageAbout from "../src/assets/imageAbout.jpg";
+import imageHome from "../src/assets/imageHome.webp";
+import imageAbout from "../src/assets/imageAbout.webp";
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './navbar.css';
-import logo from '../../assets/logo.png';
-import {Link} from 'react-scroll';
+import logo from '../../assets/logo.webp';
 import { IoIosMenu } from "react-icons/io";
 import { HiXMark } from "react-icons/hi2";
 import { motion, AnimatePresence, delay } from 'framer-motion';

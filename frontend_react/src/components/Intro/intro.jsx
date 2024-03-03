@@ -1,6 +1,5 @@
 import React from 'react';
 import './intro.css';
-import bigImage from "../../assets/imageHome.png"
 import { CiLocationOn } from "react-icons/ci";
 
 const intro = () => {
