@@ -1,3 +1,15 @@
+.App {
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-family: var(--font-base);
+    overflow: hidden;
+}
+
+.loading-screen{
+    color: var(--white-color);
+    font-family: var(--font-base);
+}
+
 .app__flex {
     display: flex;
     justify-content: center;
@@ -9,6 +21,7 @@
     letter-spacing: 0.5px;
     font-size: clamp(1.15em,1.45vw, 3em);
     font-weight: 300;
+    font-family: var(--font-base);
 }
 
 .carousel{
@@ -51,4 +64,9 @@
   
 .slide-up {
   animation: slideUp 0.75s forwards;
+}
+
+button{
+    font-family: var(--font-base);
+    font-weight: 300;
 }
