@@ -34,15 +34,11 @@
             display: flex;
             justify-content: center;
             gap: 4rem;
-            width: 100%;
+            min-width: 100%;
         
             button {
-                width: 11vw; 
-                height: 11vw; 
-                min-width: 100px;
-                min-height: 100px;
-                max-width: 200px;
-                max-height: 200px;
+                min-width: clamp(100px, 11vw,200px);
+                min-height: clamp(100px, 11vw,200px);
                 border: none; 
                 background-color: var(--primary-color); 
                 color: var(--white-color);
@@ -56,7 +52,6 @@
                 span{
                     transition: 0.3s ease-in-out;
                     font-size: clamp(1.2em,1.45vw, 3em);
-                    font-weight: 300;
                     padding-top: 0.5vw;
                 }
         
@@ -111,7 +106,6 @@
     }
     
     .webSkills{
-        width:100%;
         display: flex;
         justify-content: center;
         padding-top: 2rem;
@@ -127,7 +121,6 @@
     }
     
     .programmingSkills{
-        width:100%;
         display: flex;
         justify-content: center;
         padding-top: 1rem;

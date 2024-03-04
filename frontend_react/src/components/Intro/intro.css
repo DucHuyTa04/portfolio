@@ -21,8 +21,9 @@
         .locationText{
             background-color:  var(--dark-green-color);
             color: var(--white-color);
-            width: 150px;
-            height: 95px;
+            max-width: 150px;
+            min-height: 95px;
+            max-height: 95px;
             padding: 1rem 0 0 2.5rem;
             font-weight: 300;
 
@@ -33,8 +34,9 @@
 
         .btnLocationWrap{
             background-color: var(--dark-green-color);
-            height:95px;
-            width:95px;
+            min-height:95px;
+            max-height:95px;
+            min-width:92px;
             border-top-right-radius: 50%;
             border-bottom-right-radius: 50%;
 
@@ -74,7 +76,7 @@
     @media screen and (max-width: 700px) {
         top: 78vh;
         flex-direction: row-reverse;
-        width: 95%;
+        max-width: 95%;
         .locationText{
             display: none;
         }

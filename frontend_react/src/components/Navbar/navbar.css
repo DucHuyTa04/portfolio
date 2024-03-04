@@ -1,6 +1,6 @@
 .navbar{
-    height: 5rem;
-    width: 100%;
+    max-height: 5rem;
+    min-width: 100%;
 
     display: flex;
     align-items: center;
@@ -45,12 +45,11 @@
     }
 
     .logoSection{
-        height: 5rem;
         display: flex;
         align-items: center;
 
         .logo{
-            width: 2.25rem;
+            max-width: 2.25rem;
             margin-right: 0.7rem;
             transition: transform 0.5s ease-in-out;
         }
@@ -81,7 +80,7 @@
 .navbarLinks{
     flex:1;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     list-style: none;
 
@@ -99,8 +98,8 @@
 
 
         div{
-            width: 5px;
-            height: 5px;
+            min-width: 5px;
+            min-height: 5px;
             background: transparent;
             border-radius: 50%;
             margin-top: 7px;
@@ -131,8 +130,8 @@
 }
 
 .smallMenu{
-    width: 50px;
-    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 50%;
     position: relative;
     margin-bottom: 12px;
@@ -154,8 +153,8 @@
     }
 
     svg{
-        width:50%;
-        height:50%;
+        min-width:25px;
+        min-height:25px;
         color: var(--white-color)
     }
 
@@ -167,7 +166,7 @@
         z-index: 5;
         padding: 1.25rem 2.5vw;
 
-        width: 40%;
+        min-width: 40%;
         height: 100vh;
 
         display: flex;
@@ -181,8 +180,8 @@
         box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
 
         svg {
-            width:35px;
-            height:35px;
+            min-width:32px;
+            min-height:32px;
             color: var(--white-color);
             margin: 1rem 2vw;
         }
@@ -191,8 +190,8 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            height: 100%;
-            width: 100%;
+            height: 100vh;
+            min-width: 100%;
             
             display: flex;
             justify-content: flex-start;
@@ -203,18 +202,6 @@
                 margin:1.7rem 0 1.7rem 2vw;
                 cursor: pointer;
                 position: relative;
-
-                .smallMenuDot{
-                    position: absolute;
-                    left: -10px; 
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 5px;
-                    height: 5px; 
-                    background-color: var(--white-color);
-                    border-radius: 50%;
-                    opacity: 0;
-                }
 
                 a{
                     color: var(--white-color);
@@ -231,8 +218,8 @@
                     left: 0;
                     top: 50%;
                     transform: translate(-100%, -50%);
-                    width: 5px; 
-                    height: 5px; 
+                    min-width: 5px; 
+                    min-height: 5px; 
                     background-color: var(--white-color);
                     border-radius: 50%;
                     opacity: 0;

@@ -1,6 +1,5 @@
 #contact {
     background-color: var(--secondary-color);
-    width: 100%;
     padding-bottom: 6rem;
 }
 
@@ -20,31 +19,34 @@
 }
 
 .contactForm{
-    width: 60%;
+    min-width: 60%;
     flex-direction: column;
     margin: 4rem 6vw 0 6vw;
 
-    div{
-        width: 100%;
+    .textAreaCover{
+        max-height:170px
+    }
 
+    div{
+        min-width: 100%;
         margin: 0.75rem 0;
         border-radius: 10px;
         cursor: pointer;
-        background-color: var(--primary-color);
 
         transition: all 0.3s ease-in-out;
 
         input, textarea{
-            width:100%;
+            min-width:100%;
             padding: 1rem;
             border:none;
-            border-radius: 7px;
+            border-radius: 10px;
             outline: none;
+            background-color: var(--primary-color);
         }
 
         textarea{
-            height: 170px;
-        }
+            min-height: 170px;
+        } 
 
         &:hover {
             box-shadow: 0 0 10px white;
@@ -64,12 +66,12 @@
     }
 
     @media screen and (max-width: 700px) {
-        width: 80%;
+        min-width: 80%;
         margin: 4rem 0;
     }
 
     @media screen and (max-width: 500px) {
-        width: 90%;
+        min-width: 90%;
         margin: 4rem 0;
     }
 }

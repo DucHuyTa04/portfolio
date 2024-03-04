@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import { IoPhonePortrait, IoMail } from "react-icons/io5";
 import './contact.css';
 
 
@@ -123,14 +122,14 @@ const Contact = () => {
     
 
     {! isFormSubmitted ?
-        <div className="contactForm app__flex">
+      <div className="contactForm app__flex">
         <div className="app__flex">
           <input type="text" className="p-text" placeholder='Your full name' name='name' value ={name} onChange={handleChangeInput}/>
         </div>
         <div className="app__flex">
           <input type="email" className="p-text" placeholder='Your email' name='email' value ={email} onChange={handleChangeInput}/>
         </div>
-        <div>
+        <div className='textAreaCover'>
           <textarea 
             className="p-text" 
             placeholder="What's on your mind?"

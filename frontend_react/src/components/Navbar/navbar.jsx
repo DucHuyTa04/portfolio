@@ -3,7 +3,7 @@ import './navbar.css';
 import logo from '../../assets/logo.webp';
 import { IoIosMenu } from "react-icons/io";
 import { HiXMark } from "react-icons/hi2";
-import { motion, AnimatePresence, delay } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);

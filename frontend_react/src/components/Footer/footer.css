@@ -1,12 +1,12 @@
 .footer{
-    height: 7.5rem;
+    min-height: 7.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .footerCover{
-    width: 80%;
+    min-width: 80%;
     display: flex;
     justify-content: space-between;
     border-bottom: 3px solid var(--dark-green-color);
@@ -33,7 +33,7 @@
     }
 
     @media screen and (max-width: 450px){
-        width: 100%;
+        min-width: 100%;
         border-top: 3px solid var(--dark-green-color);
         display: flex;
         justify-content: center;
