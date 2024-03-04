@@ -126,20 +126,21 @@
     position: relative;
     flex-direction: column;
 
-    .workTag{
+    .workContentTag{
         position: absolute;
         padding: 0.5rem 1rem;
         border-radius: 10px;
         background-color: var(--dark-green-color);
-        top: -25px
+        top: -23px
     }
 
-    .workTitle{
+    .workContentTitle{
         line-height: 1.7;
         font-weight: 600;
+        margin-top: 0.3rem;
     }
 
-    .workText{
+    .workContentText{
         padding: 0;
         margin:0;
     }

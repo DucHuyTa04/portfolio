@@ -107,11 +107,11 @@ const Works = ({ works }) => {
               </div>
 
               <div className="workContent app__flex">
-                <h3 className="p-text workTitle">{work.title}</h3>
+                <h3 className="p-text workContentTitle">{work.title}</h3>
 
-                <p className="p-text workText">{work.description}</p>
+                <p className="p-text workContentText">{work.description}</p>
 
-                <div className="workTag app__flex">
+                <div className="workContentTag app__flex">
                   <p className="p-text">{work.tags[0]}</p>
                 </div>
               </div>
