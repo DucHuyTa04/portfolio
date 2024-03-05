@@ -31,15 +31,15 @@
 }
 
 .homePage:hover .duc {
-    transform: translateX(117.5%);
+    transform: translateX(2.25rem);
 }
 
 .homePage:hover .huy {
-    transform: translateX(-100%);
+    transform: translateX(-1.9rem);
 }
 
 .homePage:hover .ta {
-    transform: translateX(-490%);
+    transform: translateX(-4.83rem);
 }
 
 .homePage:hover .logo {
@@ -68,15 +68,16 @@
 }
 
 .logoSection .name .duc {
-    left: -70%;
+    right: 6rem;
 }
 
 .logoSection .name .ta {
-    left: 20%;
+    left: 1rem;
 }
 
 .logoSection .name .huy {
-    left: -19%;
+    right: 1.9rem;
+    margin: 0.3rem;
 }
 
 .navbarLinks {
