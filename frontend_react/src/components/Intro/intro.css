@@ -1,5 +1,5 @@
 #intro{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../../assets/imageHome.webp");
     background-size: 70vh;
     background-repeat: no-repeat;
@@ -26,10 +26,6 @@
             max-height: 95px;
             padding: 1rem 0 0 2.5rem;
             font-weight: 300;
-
-            @media screen and (max-width: 900px) {
-                padding: 1.2rem 0rem 1.2rem 2rem;
-            }
         }
 
         .btnLocationWrap{
@@ -44,23 +40,15 @@
                 background-color: var(--primary-color);
                 padding: 0.6685rem ;
                 border-radius: 50%;
-
-                @media screen and (max-width: 700px){
-                    background-color: rgba(255, 255, 255, 0);
-                }
             }
 
             .iconLocation{
                 transition: all 0.3s ease-in-out;
                 &:hover{
-                    fill: var(--dark-green-color);
+                    transform: scale(1.2);
                     cursor: pointer;
                     
                 }
-            }
-
-            @media screen and (max-width: 700px){
-                background-color: rgba(255, 255, 255, 0);
             }
         }
     }
@@ -71,19 +59,6 @@
         padding-right: 4.2vw;
         font-weight: 300;
         font-size: clamp(1.2em, 2.3vw, 3em);
-    }
-
-    @media screen and (max-width: 700px) {
-        top: 78vh;
-        flex-direction: row-reverse;
-        max-width: 95%;
-        .locationText{
-            display: none;
-        }
-
-        .shortIntro {
-            margin-left: 6vw;
-        }
     }
 }
 
@@ -96,4 +71,32 @@
     transform: translateX(-50%); 
     white-space: nowrap; 
     text-align: center; 
+}
+
+@media (max-width: 900px) {
+    .introContent .hanger .locationText {
+        padding-left: 1.5rem;
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 700px) {
+    .introContent {
+        top: 78vh;
+        flex-direction: row-reverse;
+        max-width: 95%;
+    }
+
+    .introContent .hanger .locationText {
+        display: none;
+    }
+
+    .introContent .shortIntro {
+        margin-left: 6vw;
+    }
+
+    .introContent .hanger .btnLocationWrap,
+    .introContent .hanger .btnLocationWrap .btnLocation {
+        background-color: rgba(255, 255, 255, 0);
+    }
 }
