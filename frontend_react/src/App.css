@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-.loading-screen{
+.loading-screen {
     color: var(--white-color);
     font-family: var(--font-base);
 }
@@ -16,38 +16,38 @@
     align-items: center;
 }
 
-.p-text{
+.p-text {
     text-align: left;
     letter-spacing: 0.5px;
-    font-size: clamp(1.15em,1.45vw, 3em);
+    font-size: clamp(1.15em, 1.45vw, 3em);
     font-weight: 300;
     font-family: var(--font-base);
 }
 
-.carousel{
+.carousel {
     overflow: hidden;
     padding: 2rem 0 0 0;
     margin: 0;
     white-space: nowrap;
+}
 
-    .title {
-        display: inline-block;
-        font-size: clamp(10em, 13vw, 15em);
-        font-weight: 900;
-        animation: slide 200s infinite linear;
-    
-        & span{
-            margin: 2rem;
-            letter-spacing: -7px;
-        }
-    }
+.carousel .title {
+    display: inline-block;
+    font-size: clamp(10em, 13vw, 15em);
+    font-weight: 900;
+    animation: slide 200s infinite linear;
+}
+
+.carousel .title span {
+    margin: 2rem;
+    letter-spacing: -7px;
 }
 
 @keyframes slide {
     from {
         transform: translateX(-100%);
     }
-    to{
+    to {
         transform: translateX(0);
     }
 }
@@ -60,13 +60,13 @@
     to {
       transform: translateY(-100%);
     }
-  }
+}
   
 .slide-up {
   animation: slideUp 0.75s forwards;
 }
 
-button{
+button {
     font-family: var(--font-base);
     font-weight: 300;
 }

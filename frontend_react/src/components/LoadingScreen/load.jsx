@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './load.css';
 
-const greetings = ["Hello", "Bonjour", "Xin chào", "Hola", "您好", "سلام عليكم", "Olá"];
+const greetings = ["Hello", "Bonjour", "Hola", "您好", "سلام عليكم", "Olá", "Xin chào"];
 
 const LoadScreen = () => {
   const [currentGreeting, setCurrentGreeting] = useState('');

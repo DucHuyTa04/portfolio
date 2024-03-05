@@ -1,121 +1,117 @@
-#about{
+#about {
     background-color: var(--secondary-color);
     padding-bottom: 6rem;
 }
 
 /* Start the body part */
 .bodyAbout {
-    display: flex;  
-
-    /* Left part */
-    .textAbout {
-        flex: 1;
-        box-sizing: border-box;
-        position: relative;
-        top: -1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-
-        & > span {
-            flex: 0;
-            padding: 2rem 4vw 0 8vw;
-        }
-
-        .slogan{
-            font-size: clamp(2em,3vw, 5em);
-            font-weight: bold;
-            padding: 4rem 4vw 0 8vw;
-        }
-
-        .buttonsContainer {
-            padding: 4rem 4vw 0 6vw;
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            min-width: 100%;
-        
-            button {
-                min-width: clamp(100px, 11vw,200px);
-                min-height: clamp(100px, 11vw,200px);
-                border: none; 
-                background-color: var(--primary-color); 
-                color: var(--white-color);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center; 
-                border-radius: 10%;
-                cursor: pointer;
-        
-                span{
-                    transition: 0.3s ease-in-out;
-                    font-size: clamp(1.2em,1.45vw, 3em);
-                    padding-top: 0.5vw;
-                }
-        
-                .iconAbout{
-                    transition: 0.3s ease-in-out;
-                    font-size: clamp(50px,5vw,100px);
-                }
-        
-                &:hover{ 
-                    span {
-                        color: var(--dark-green-color);
-                        }
-                    .iconAbout {
-                        fill: var(--dark-green-color);
-                        }
-                }
-            }
-        }
-    }
-
-    /* Right part - Image */
-    .imageAbout {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 4rem 6vw 0 0;
-
-        & .imgIntro {
-            max-width: 80%;
-            border-radius: 2%;
-            margin-left: 6vw;
-        }
-    }
+    display: flex;
 }
- 
 
-/* My Skills */
-.mySkills{
+.bodyAbout .textAbout {
+    flex: 1;
+    box-sizing: border-box;
+    position: relative;
+    top: -1rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
 
-    .textSkills{
-        font-size: clamp(2em,3vw, 5em);
-        font-weight: 700;
-        margin: 4rem 0 0 8vw;
-    }
-    
-    .webSkills{
-        display: flex;
-        justify-content: center;
-        padding-top: 2rem;
-    }
-    
-    .programmingSkills{
-        display: flex;
-        justify-content: center;
-        padding-top: 1rem;
-    }
-    
-    .iconSkill{
-        font-size: clamp(38px,4vw,90px);
-        margin: 0 2vw 0 2vw;
-    }
+.bodyAbout .textAbout > span {
+    flex: 0;
+    padding: 2rem 4vw 0 8vw;
+}
+
+.bodyAbout .textAbout .slogan {
+    font-size: clamp(2em, 3vw, 5em);
+    font-weight: bold;
+    padding: 4rem 4vw 0 8vw;
+}
+
+.bodyAbout .textAbout .buttonsContainer {
+    padding: 4rem 4vw 0 6vw;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    min-width: 100%;
+}
+
+.bodyAbout .textAbout .buttonsContainer button {
+    min-width: clamp(100px, 11vw, 200px);
+    min-height: clamp(100px, 11vw, 200px);
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.bodyAbout .textAbout .buttonsContainer button span {
+    transition: 0.3s ease-in-out;
+    font-size: clamp(1.2em, 1.45vw, 3em);
+    padding-top: 0.5vw;
+}
+
+.bodyAbout .textAbout .buttonsContainer button .iconAbout {
+    transition: 0.3s ease-in-out;
+    font-size: clamp(50px, 5vw, 100px);
+}
+
+.bodyAbout .textAbout .buttonsContainer button:hover span {
+    color: var(--dark-green-color);
+}
+
+.bodyAbout .textAbout .buttonsContainer button:hover .iconAbout {
+    fill: var(--dark-green-color);
+}
+
+.bodyAbout .imageAbout {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 6vw 0 0;
+}
+
+.bodyAbout .imageAbout .imgIntro {
+    max-width: 80%;
+    border-radius: 2%;
+    margin-left: 6vw;
+}
+
+/* My Skills */
+.mySkills {
+    display: flex;
+    flex-direction: column;
+}
+
+.mySkills .textSkills {
+    font-size: clamp(2em, 3vw, 5em);
+    font-weight: 700;
+    margin: 4rem 0 0 8vw;
+}
+
+.mySkills .webSkills {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.mySkills .programmingSkills {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.mySkills .iconSkill {
+    font-size: clamp(38px, 4vw, 90px);
+    margin: 0 2vw 0 2vw;
 }
 
 @media (max-width: 700px) {

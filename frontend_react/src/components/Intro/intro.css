@@ -1,4 +1,4 @@
-#intro{
+#intro {
     min-height: 100vh;
     background-image: url("../../assets/imageHome.webp");
     background-size: 70vh;
@@ -6,60 +6,60 @@
     background-position: center bottom;
 }
 
-.introContent{
+.introContent {
     position: relative;
     top: 38vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
-    .hanger{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.introContent .hanger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .locationText{
-            background-color:  var(--dark-green-color);
-            color: var(--white-color);
-            max-width: 150px;
-            min-height: 95px;
-            max-height: 95px;
-            padding: 1rem 0 0 2.5rem;
-            font-weight: 300;
-        }
+.introContent .hanger .locationText {
+    background-color: var(--dark-green-color);
+    color: var(--white-color);
+    max-width: 150px;
+    min-height: 95px;
+    max-height: 95px;
+    padding: 1rem 0 0 2.5rem;
+    font-weight: 300;
+}
 
-        .btnLocationWrap{
-            background-color: var(--dark-green-color);
-            min-height:95px;
-            max-height:95px;
-            min-width:92px;
-            border-top-right-radius: 50%;
-            border-bottom-right-radius: 50%;
+.introContent .hanger .btnLocationWrap {
+    background-color: var(--dark-green-color);
+    min-height: 95px;
+    max-height: 95px;
+    min-width: 92px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
 
-            .btnLocation{
-                background-color: var(--primary-color);
-                padding: 0.6685rem ;
-                border-radius: 50%;
-            }
+.introContent .hanger .btnLocationWrap .btnLocation {
+    background-color: var(--primary-color);
+    padding: 0.6685rem;
+    border-radius: 50%;
+}
 
-            .iconLocation{
-                transition: all 0.3s ease-in-out;
-                &:hover{
-                    transform: scale(1.2);
-                    cursor: pointer;
-                    
-                }
-            }
-        }
-    }
+.introContent .hanger .btnLocationWrap .iconLocation {
+    transition: all 0.3s ease-in-out;
+}
 
-    .shortIntro{
-        position: relative;
-        top:-1rem;
-        padding-right: 4.2vw;
-        font-weight: 300;
-        font-size: clamp(1.2em, 2.3vw, 3em);
-    }
+.introContent .hanger .btnLocationWrap .iconLocation:hover {
+    fill: var(--dark-green-color);
+    cursor: pointer;
+}
+
+.introContent .shortIntro {
+    position: relative;
+    top: -1rem;
+    padding-right: 4.2vw;
+    font-weight: 300;
+    font-size: clamp(1.2em, 2.3vw, 3em);
 }
 
 .bigName {
@@ -67,10 +67,10 @@
     top: 48vh;
     font-size: clamp(3.2em, 14vw, 14em);
     font-weight: 500;
-    left: 50%; 
-    transform: translateX(-50%); 
-    white-space: nowrap; 
-    text-align: center; 
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -98,5 +98,11 @@
     .introContent .hanger .btnLocationWrap,
     .introContent .hanger .btnLocationWrap .btnLocation {
         background-color: rgba(255, 255, 255, 0);
+    }
+
+    .introContent .hanger .btnLocationWrap .iconLocation:hover {
+        fill: var(--white-color);
+        scale: 1.2;
+        cursor: pointer;
     }
 }

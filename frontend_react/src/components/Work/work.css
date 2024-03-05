@@ -1,130 +1,127 @@
-#work{
+#work {
     padding-bottom: 6rem;
 }
 
-.workText{
+.workText {
     margin: 4rem 8vw 0 8vw;
     font-weight: 300;
     font-size: clamp(1.4em, 2.2vw, 3em);
 }
 
-.workFilter{
+.workFilter {
     flex-wrap: wrap;
     margin: 2rem 0 3rem 0;
-
-    .workFilterItem{
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-weight: 500;
-        color: var(--white-color);
-        background-color: var(--secondary-color);
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        margin: 0.5rem;
-
-        &:hover{
-            color: var(--secondary-color);
-            background-color: whitesmoke;
-        }
-    }
-
-    .item-active{
-        color: var(--secondary-color);
-        background-color: whitesmoke;
-    }
 }
 
-.workPortfolio{
+.workFilter .workFilterItem {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 0.5rem;
+}
+
+.workFilter .workFilterItem:hover {
+    color: var(--secondary-color);
+    background-color: whitesmoke;
+}
+
+.workFilter .item-active {
+    color: var(--secondary-color);
+    background-color: whitesmoke;
+}
+
+.workPortfolio {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-
-    .workItem{
-        max-width:270px;
-        flex-direction: column;
-        margin:2rem;
-        padding:1rem;
-        border-radius: 0.5rem;
-        background-color: var(--dark-green-color);
-        color: var(--white-color);
-
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-
-        &:hover{
-            box-shadow: 0 0 25px rgba(0,0,0,0.2);
-        }
-    }
 }
 
-.workImg{
+.workPortfolio .workItem {
+    max-width: 270px;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--dark-green-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.workPortfolio .workItem:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.workImg {
     position: relative;
-
-    img{
-        max-width: 238px;
-        min-width: 238px;
-        max-height: 238px;
-        min-height: 238px;
-        border-radius: 0.5rem;
-        object-fit: cover;
-    }
 }
 
-.workHover{
+.workImg img {
+    max-width: 230px;
+    min-width: 230px;
+    max-height: 230px;
+    min-height: 230px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.workHover {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-
-    background-color: rgba(0,0,0,0.5);
-
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem;
     opacity: 0;
-    transition: all 0.3 ease;
-
-    div{
-        min-width: 50px;
-        min-height: 50px;
-        border-radius: 50%;
-        background-color: rgba(0,0,0,0.5);
-
-        color: var(--white-color);
-        margin: 1rem;
-        font-weight: 800;
-        cursor: pointer;
-        transition: all 0.3 ease;
-        svg{
-            width: 50%;
-            height: 50%;
-        }
-    }
+    transition: all 0.3s ease;
 }
 
-.workContent{
+.workHover div {
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white-color);
+    margin: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.workHover div svg {
+    width: 50%;
+    height: 50%;
+}
+
+.workContent {
     padding: 1rem 1vw 0.5rem;
     position: relative;
     flex-direction: column;
+}
 
-    .workContentTag{
-        position: absolute;
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        background-color: var(--dark-green-color);
-        top: -1.7rem;
-    }
+.workContent .workContentTag {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background-color: var(--dark-green-color);
+    top: -1.7rem;
+}
 
-    .workContentTitle{
-        line-height: 1.7;
-        font-weight: 600;
-        margin-top: 0.3rem;
-    }
+.workContent .workContentTitle {
+    line-height: 1.7;
+    font-weight: 600;
+    margin-top: 0.3rem;
+}
 
-    .workContentText{
-        padding: 0;
-        margin:0;
-    }
+.workContent .workContentText {
+    padding: 0;
+    margin: 0;
 }
 
 /* Media Queries */
@@ -135,13 +132,14 @@
     }
 
     .workPortfolio .workItem {
-        max-width: 470px;
+        max-width: 390px;
         padding: 1.25rem;
         border-radius: 0.75rem;
     }
 
     .workImg img {
-        max-height: 430px;
+        max-height: 350px;
+        max-width: 350px;
     }
 }
 
