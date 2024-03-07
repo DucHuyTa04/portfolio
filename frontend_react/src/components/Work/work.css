@@ -84,7 +84,9 @@
 
 .workHover div {
     min-width: 50px;
+    max-width: 50px;
     min-height: 50px;
+    max-height: 50px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     color: var(--white-color);
@@ -95,8 +97,10 @@
 }
 
 .workHover div svg {
-    width: 50%;
-    height: 50%;
+    min-width: 25px;
+    max-width: 25px;
+    min-height: 25px;
+    max-height: 25px;
 }
 
 .workContent {

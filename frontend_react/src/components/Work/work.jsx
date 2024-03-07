@@ -69,7 +69,7 @@ const Works = ({ works }) => {
 
         <motion.div
           animate={animateCard}
-          transition={{duration:0.25}}
+          transition={{duration:0.2, ease: 'easeInOut'}}
           className='workPortfolio'
         >
           {filterWork.map((work,index) => (
