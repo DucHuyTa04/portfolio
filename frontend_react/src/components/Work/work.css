@@ -104,6 +104,7 @@
 }
 
 .workContent {
+    max-width: 230px;
     padding: 1rem 1vw 0.5rem;
     position: relative;
     flex-direction: column;
