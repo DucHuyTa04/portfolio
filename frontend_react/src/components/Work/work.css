@@ -39,6 +39,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+
 }
 
 .workPortfolio .workItem {
@@ -122,6 +123,7 @@
     line-height: 1.7;
     font-weight: 600;
     margin-top: 0.3rem;
+    text-align: center;
 }
 
 .workContent .workContentText {
