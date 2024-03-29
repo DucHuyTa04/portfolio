@@ -39,7 +39,7 @@
 }
 
 .homePage:hover .ta {
-    transform: translateX(-4.85rem);
+    transform: translateX(-5.85rem);
 }
 
 .homePage:hover .logo {
@@ -72,7 +72,7 @@
 }
 
 .logoSection .name .ta {
-    left: 1rem;
+    left: 2rem;
 }
 
 .logoSection .name .huy {

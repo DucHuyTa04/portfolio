@@ -33,7 +33,7 @@
 
 .carousel .title {
     display: inline-block;
-    font-size: clamp(10em, 13vw, 15em);
+    font-size: clamp(8em, 11vw, 13em);
     font-weight: 900;
     animation: slide 200s infinite linear;
 }
