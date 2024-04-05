@@ -17,7 +17,7 @@ const footer = () => {
                 <a href="https://www.linkedin.com/in/duchuyta04/" target="_blank" rel="noopener noreferrer">
                     <IoLogoLinkedin className='socialIcon' />
                 </a>
-                <a href="https://github.com/iamafeeder" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/DucHuyTa04" target="_blank" rel="noopener noreferrer">
                     <FaGithub className='socialIcon' />
                 </a>
                 <a href="https://www.instagram.com/huy.ta_04/" target="_blank" rel="noopener noreferrer">
