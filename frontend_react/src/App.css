@@ -1,0 +1,72 @@
+.App {
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-family: var(--font-base);
+    overflow: hidden;
+}
+
+.loading-screen {
+    color: var(--white-color);
+    font-family: var(--font-base);
+}
+
+.app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-text {
+    text-align: left;
+    letter-spacing: 0.5px;
+    font-size: clamp(1.15em, 1.45vw, 3em);
+    font-weight: 300;
+    font-family: var(--font-base);
+}
+
+.carousel {
+    overflow: hidden;
+    padding: 2rem 0 0 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.carousel .title {
+    display: inline-block;
+    font-size: clamp(8em, 11vw, 13em);
+    font-weight: 900;
+    animation: slide 200s infinite linear;
+}
+
+.carousel .title span {
+    margin: 2rem;
+    letter-spacing: -7px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* General slide-up animation */
+@keyframes slideUp {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+}
+  
+.slide-up {
+  animation: slideUp 0.75s forwards;
+}
+
+button {
+    font-family: var(--font-base);
+    font-weight: 300;
+}

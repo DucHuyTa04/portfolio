@@ -1,0 +1,87 @@
+#contact {
+    background-color: var(--secondary-color);
+    padding-bottom: 6rem;
+}
+
+.contactBody {
+    flex-direction: column;
+    flex: 1;
+}
+
+.contactBody .headText {
+    margin: 3rem 8vw;
+    font-weight: 400;
+    font-size: clamp(1.4em, 2.2vw, 3em);
+}
+
+.contactBody .headTextDetails {
+    margin: 0 8vw;
+}
+
+.contactForm {
+    min-width: 60%;
+    flex-direction: column;
+    margin: 4rem 6vw 0;
+}
+
+.contactForm .textAreaCover {
+    max-height: 170px;
+}
+
+.contactForm div {
+    min-width: 100%;
+    margin: 0.75rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contactForm div input,
+.contactForm div textarea {
+    min-width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--primary-color);
+}
+
+.contactForm div textarea {
+    min-height: 170px;
+}
+
+.contactForm div:hover {
+    box-shadow: 0 0 10px white;
+}
+
+.contactForm button {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    font-weight: 500;
+    color: var(--white-color);
+    outline: none;
+    margin: 2rem 0 0;
+    cursor: pointer;
+}
+
+.textAfterSubmit {
+    margin: 6rem 8vw 3rem 8vw;
+    font-size: clamp(1.4em, 2.2vw, 3em);
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+    .contactForm {
+        min-width: 80%;
+        margin: 4rem 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .contactForm {
+        min-width: 90%;
+        margin: 4rem 0;
+    }
+}
