@@ -83,14 +83,12 @@ const about = () => {
             <IoLogoCss3 className="iconSkill" />
             <IoLogoJavascript className="iconSkill" />
             <DiJqueryLogo className="iconSkill" />
-            <FaBootstrap className="iconSkill" />
           </span>
           <span className="webSkills2">
+            <FaBootstrap className="iconSkill" />
             <FaNodeJs className="iconSkill" />
             <FaReact className="iconSkill" />
             <GrMysql className="iconSkill" />
-            <FaPhp className="iconSkill" />
-            <SiMongodb className="iconSkill" />
             </span>
         </span>
         <span className="programmingSkills">
