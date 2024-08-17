@@ -56,7 +56,7 @@ const Works = ({ works }) => {
       <div className="bodywork">
         <div className="app__flex workText"> Explore my work - each project is a testament of creativity, dedication, and passion.</div>
         <div className="workFilter app__flex">
-          {['All','Web', 'AI', 'Others'].map((item,index) => (
+          {['All','Data Analysis','Machine Learning', 'Others'].map((item,index) => (
             <div
               key={index}give 
               onClick={() => handleWorkFilter(item)}
