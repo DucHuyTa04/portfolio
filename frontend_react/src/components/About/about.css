@@ -101,7 +101,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.5rem; 
+    gap: 1rem; 
+    margin: 0 8vw;
 }
 
 .mySkills .skillsItem {
@@ -155,11 +156,5 @@
     .bodyAbout .textAbout .buttonsContainer {
         padding: 4rem 8vw 0 8vw;
         gap :10vw;
-    }
-}
-
-@media (max-width: 400px) {
-    .mySkills .iconSkill {
-        margin: 0 2vw 0 2vw;
     }
 }
