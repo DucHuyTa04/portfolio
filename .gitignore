@@ -10,7 +10,7 @@ backend_sanity/node_modules/
 /coverage
 
 # production
-/build
+frontend_react/build
 
 # misc
 .DS_Store
