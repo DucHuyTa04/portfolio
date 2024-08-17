@@ -6,11 +6,10 @@ import portrait from "../../assets/imageAbout.webp"
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
-import { FaHtml5, FaGitAlt, FaNodeJs, FaReact, FaBootstrap, FaGithub, FaJava, FaPython, FaPhp } from "react-icons/fa";
-import { IoLogoJavascript, IoLogoCss3  } from "react-icons/io5";
-import { DiJqueryLogo } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
-import { SiMongodb, SiCplusplus, SiCsharp } from "react-icons/si";
+import { PiMicrosoftExcelLogoDuotone } from "react-icons/pi";
+import { SiPowerbi, SiPython } from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
 
 const about = () => {
   return (
@@ -41,11 +40,10 @@ const about = () => {
           <span className="p-text">
             In my professional pursuits, I am dedicated to perfection,
             understanding the importance of learning from failures, while also
-            ensuring meticulous attention to every small task.
+            ensuring meticulous attention to every task.
           </span>
           <span className="p-text">
-            My primary focus is on exploring Web Development and Artificial
-            Intelligence (AI).
+            My primary focus is on mastering Data Analysis and Machine Learning.
           </span>
           <div className="buttonsContainer">
             <Link to="work" spy="true">
@@ -55,7 +53,7 @@ const about = () => {
                 className="webPart"
               >
                 <MdOutlineWeb color="whitesmoke" className="iconAbout" />
-                <span>Web</span>
+                <span>Data <br /> Analysis</span>
               </motion.button>
             </Link>
 
@@ -66,7 +64,7 @@ const about = () => {
                 className="aiPart"
               >
                 <AiFillRobot color="whitesmoke" className="iconAbout" />
-                <span>AI</span>
+                <span>Machine <br /> Learning</span>
               </motion.button>
             </Link>
           </div>
@@ -77,28 +75,28 @@ const about = () => {
       </div>
       <div className="mySkills">
         <span className="textSkills">My Skills</span>
-        <span className="webSkills">
-          <span className="webSkills1">
-            <FaHtml5 className="iconSkill" />
-            <IoLogoCss3 className="iconSkill" />
-            <IoLogoJavascript className="iconSkill" />
-            <DiJqueryLogo className="iconSkill" />
+        <div className="skillsContainer">
+          <span className="skillsItem">
+            <PiMicrosoftExcelLogoDuotone className="iconSkill" />
+            <span className="skillText">Excel</span>
           </span>
-          <span className="webSkills2">
-            <FaBootstrap className="iconSkill" />
-            <FaNodeJs className="iconSkill" />
-            <FaReact className="iconSkill" />
+          <span className="skillsItem">
             <GrMysql className="iconSkill" />
-            </span>
-        </span>
-        <span className="programmingSkills">
-          <FaGitAlt className="iconSkill" />
-          <FaGithub className="iconSkill" />
-          <FaJava className="iconSkill" />
-          <FaPython className="iconSkill" />
-          <SiCplusplus className="iconSkill" />
-          <SiCsharp className="iconSkill" />
-        </span>
+            <span className="skillText">MySQL</span>
+          </span>
+          <span className="skillsItem">
+            <SiPowerbi className="iconSkill" />
+            <span className="skillText">Power BI</span>
+          </span>
+          <span className="skillsItem">
+            <SiPython className="iconSkill" />
+            <span className="skillText">Python</span>
+          </span>
+          <span className="skillsItem">
+            <FaJava className="iconSkill" />
+            <span className="skillText">Java</span>
+          </span>
+        </div>
       </div>
     </section>
   );

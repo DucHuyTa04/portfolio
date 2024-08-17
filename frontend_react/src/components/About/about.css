@@ -97,21 +97,29 @@
     margin: 4rem 0 0 8vw;
 }
 
-.mySkills .webSkills {
+.skillsContainer {
     display: flex;
     justify-content: center;
-    padding-top: 2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem; 
 }
 
-.mySkills .programmingSkills {
+.mySkills .skillsItem {
     display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+    flex-direction: column;
+    align-items: center; 
+    padding-top: 2rem;
 }
 
 .mySkills .iconSkill {
     font-size: clamp(38px, 4vw, 90px);
-    margin: 0 2vw 0 2vw;
+    margin: 0 3vw 0 3vw;
+}
+
+.mySkills .skillText {
+    font-size: clamp(1.2em, 1.45vw, 3em);
+    font-weight: 300;
+    margin-top: 1rem; 
 }
 
 @media (max-width: 1000px) {
@@ -148,13 +156,10 @@
         padding: 4rem 8vw 0 8vw;
         gap :10vw;
     }
+}
 
-    .mySkills .webSkills {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mySkills .webSkills .webSkills2 {
-        padding-top: 1rem;
+@media (max-width: 400px) {
+    .mySkills .iconSkill {
+        margin: 0 2vw 0 2vw;
     }
 }
