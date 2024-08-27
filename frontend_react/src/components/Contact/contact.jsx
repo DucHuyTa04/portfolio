@@ -41,7 +41,7 @@ const Contact = () => {
   
       const hourForCalculation = parseInt(calculationTime.split(':')[0], 10); // Extract hour for calculation
       // Determine if it's night time based on 24-hour format
-      const isNightTime = hourForCalculation < 9 || hourForCalculation >= 23;
+      const isNightTime = hourForCalculation < 6 || hourForCalculation >= 23;
       const timeBasedMessage = isNightTime
         ? "A good sleep promises readiness for the next morning, but any messages are welcome."
         : "Sounds like a wonderful time to start working. Let me know how I can help you, I’m listening.";

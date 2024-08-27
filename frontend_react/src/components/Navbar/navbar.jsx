@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './navbar.css';
 import logo from '../../assets/logo.webp';
 import { IoIosMenu } from "react-icons/io";
-import { HiXMark } from "react-icons/hi2";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -31,6 +30,14 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (toggle) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [toggle]);
 
   return (
     <nav className="navbar">
@@ -71,7 +78,6 @@ const Navbar = () => {
               exit={{ x: "100vw" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <HiXMark onClick={() => setToggle(false)} />
               <ul>
                 {["about", "work", "contact"].map((item) => (
                   <li key={item}>

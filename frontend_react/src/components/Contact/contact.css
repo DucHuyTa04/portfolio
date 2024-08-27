@@ -46,12 +46,18 @@
     background-color: var(--primary-color);
 }
 
+.contactForm div input::placeholder,
+.contactForm div textarea::placeholder {
+    color: var(--dark-green-color);
+}
+
 .contactForm div textarea {
     min-height: 170px;
+   
 }
 
 .contactForm div:hover {
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 5px white;
 }
 
 .contactForm button {

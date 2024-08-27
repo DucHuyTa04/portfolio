@@ -56,10 +56,9 @@
 
 .introContent .shortIntro {
     position: relative;
-    top: -1rem;
     padding-right: 4.2vw;
     font-weight: 300;
-    font-size: clamp(1.2em, 2.3vw, 3em);
+    font-size: clamp(1.3em, 2.5vw, 3em);
 }
 
 .bigName {
@@ -104,5 +103,23 @@
         fill: var(--white-color);
         scale: 1.2;
         cursor: pointer;
+    }
+}
+
+@media (min-width: 1300px) {
+    .introContent .hanger {
+        zoom: 1.1;
+    }
+}
+
+@media (min-width: 1500px) {
+    .introContent .hanger {
+        zoom: 1.2;
+    }
+}
+
+@media (min-width: 1700px) {
+    .introContent .hanger {
+        zoom: 1.3;
     }
 }
