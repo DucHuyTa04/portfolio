@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import { urlFor } from '../../client';
 import "./work.css";
 
@@ -9,10 +9,9 @@ const Works = ({ works }) => {
   const [animateCard, setAnimateCard] = useState({y:0, opacity:1});
   const [filterWork, setFilterWork] = useState(works);
 
-
   useEffect(() => {
     setFilterWork(works);
-  }, [works]); 
+  }, [works]);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -29,6 +28,17 @@ const Works = ({ works }) => {
     }, 500);
   }
 
+  // Function to shorten tag names
+  const getShortTagName = (tag) => {
+    switch(tag) {
+      case 'Data Analysis':
+        return 'DA';
+      case 'Machine Learning':
+        return 'ML';
+      default:
+        return tag;
+    }
+  }
 
   return (
     <section id="work">
@@ -58,7 +68,7 @@ const Works = ({ works }) => {
         <div className="workFilter app__flex">
           {['All','Data Analysis','Machine Learning', 'Others'].map((item,index) => (
             <div
-              key={index}give 
+              key={index}
               onClick={() => handleWorkFilter(item)}
               className={`workFilterItem app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
               >
@@ -82,7 +92,7 @@ const Works = ({ works }) => {
                   transition={{ duration: 0.15, ease: 'easeInOut', staggerChildren: 0.5}}
                   className='workHover app__flex'
                 >
-                  <a href="work.projectLink" target="_blank" rel="noreferrer">
+                  <a href={work.projectLink} target="_blank" rel="noreferrer">
                     <motion.div
                       whileInView={{scale: [0,1]}}
                       whileHover={{ scale: [1, 0.9] }}
@@ -93,7 +103,7 @@ const Works = ({ works }) => {
                     </motion.div>
                   </a>
 
-                  <a href="work.projectLink" target="_blank" rel="noreferrer">
+                  <a href={work.projectLink} target="_blank" rel="noreferrer">
                     <motion.div
                     whileInView={{scale: [0,1]}}
                       whileHover={{ scale: [1, 0.9] }}
@@ -112,7 +122,7 @@ const Works = ({ works }) => {
                 <p className="p-text workContentText">{work.description}</p>
 
                 <div className="workContentTag app__flex">
-                  <p className="p-text">{work.tags[0]}</p>
+                  <p className="p-text">{getShortTagName(work.tags[0])}</p>
                 </div>
               </div>
             </div>
@@ -123,4 +133,4 @@ const Works = ({ works }) => {
   )
 }
 
-export default Works
+export default Works;
