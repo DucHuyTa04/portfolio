@@ -50,8 +50,14 @@ const about = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2, type: "tween" }}
-                onMouseEnter={(e) => e.currentTarget.querySelector('.iconAbout').style.color = '#163020'}
-                onMouseLeave={(e) => e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke'}
+                onMouseEnter={(e) => {
+                  e.currentTarget.querySelector('.iconAbout').style.color = '#163020';
+                  e.currentTarget.querySelector('span').style.color = '#163020';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke';
+                  e.currentTarget.querySelector('span').style.color = 'whitesmoke'; 
+                }}
               >
                 <GrAnalytics color="whitesmoke" className="iconAbout" />
                 <span>Data <br /> Analysis</span>
@@ -62,8 +68,14 @@ const about = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2, type: "tween" }}
-                onMouseEnter={(e) => e.currentTarget.querySelector('.iconAbout').style.color = '#163020'}
-                onMouseLeave={(e) => e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke'}
+                onMouseEnter={(e) => {
+                  e.currentTarget.querySelector('.iconAbout').style.color = '#163020';
+                  e.currentTarget.querySelector('span').style.color = '#163020';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke';
+                  e.currentTarget.querySelector('span').style.color = 'whitesmoke'; 
+                }}
               >
                 <LuBrainCircuit color="whitesmoke" className="iconAbout" />
                 <span>Machine <br /> Learning</span>

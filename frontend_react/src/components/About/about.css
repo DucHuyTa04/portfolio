@@ -63,10 +63,6 @@
     font-size: clamp(45px, 5vw, 85px);
 }
 
-.bodyAbout .textAbout .buttonsContainer button:hover span {
-    color: var(--dark-green-color);
-}
-
 .bodyAbout .imageAbout {
     flex: 1;
     max-width: 45%;
