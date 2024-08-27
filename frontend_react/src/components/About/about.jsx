@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.css';
-import { MdOutlineWeb } from "react-icons/md";
-import { AiFillRobot } from "react-icons/ai";
+import { GrAnalytics } from "react-icons/gr";
+import { LuBrainCircuit } from "react-icons/lu";
 import portrait from "../../assets/imageAbout.webp"
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
@@ -50,9 +50,10 @@ const about = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2, type: "tween" }}
-                className="webPart"
+                onMouseEnter={(e) => e.currentTarget.querySelector('.iconAbout').style.color = '#163020'}
+                onMouseLeave={(e) => e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke'}
               >
-                <MdOutlineWeb color="whitesmoke" className="iconAbout" />
+                <GrAnalytics color="whitesmoke" className="iconAbout" />
                 <span>Data <br /> Analysis</span>
               </motion.button>
             </Link>
@@ -61,9 +62,10 @@ const about = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2, type: "tween" }}
-                className="aiPart"
+                onMouseEnter={(e) => e.currentTarget.querySelector('.iconAbout').style.color = '#163020'}
+                onMouseLeave={(e) => e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke'}
               >
-                <AiFillRobot color="whitesmoke" className="iconAbout" />
+                <LuBrainCircuit color="whitesmoke" className="iconAbout" />
                 <span>Machine <br /> Learning</span>
               </motion.button>
             </Link>

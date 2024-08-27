@@ -54,21 +54,17 @@
 
 .bodyAbout .textAbout .buttonsContainer button span {
     transition: 0.3s ease-in-out;
-    font-size: clamp(1.2em, 1.45vw, 3em);
+    font-size: clamp(1.2em, 1.45vw, 2.5em);
     padding-top: 0.5vw;
 }
 
 .bodyAbout .textAbout .buttonsContainer button .iconAbout {
     transition: 0.3s ease-in-out;
-    font-size: clamp(50px, 5vw, 100px);
+    font-size: clamp(45px, 5vw, 85px);
 }
 
 .bodyAbout .textAbout .buttonsContainer button:hover span {
     color: var(--dark-green-color);
-}
-
-.bodyAbout .textAbout .buttonsContainer button:hover .iconAbout {
-    fill: var(--dark-green-color);
 }
 
 .bodyAbout .imageAbout {
