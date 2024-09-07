@@ -103,7 +103,7 @@ const Works = ({ works }) => {
                     </motion.div>
                   </a>
 
-                  <a href={work.projectLink} target="_blank" rel="noreferrer">
+                  <a href={work.codeLink} target="_blank" rel="noreferrer">
                     <motion.div
                     whileInView={{scale: [0,1]}}
                       whileHover={{ scale: [1, 0.9] }}
@@ -119,7 +119,7 @@ const Works = ({ works }) => {
               <div className="workContent app__flex">
                 <h3 className="p-text workContentTitle">{work.title}</h3>
 
-                <p className="p-text workContentText">{work.description}</p>
+                <p className="workContentText">{work.description}</p>
 
                 <div className="workContentTag app__flex">
                   <p className="p-text">{getShortTagName(work.tags[0])}</p>
