@@ -1,67 +1,91 @@
 import React, { useState, useEffect } from 'react';
-import { client, urlFor } from './client'; 
+import { client, urlFor } from './client';
 import LoadingScreen from './components/LoadingScreen/load';
-import Navbar from "./components/Navbar/navbar";
-import Intro from "./components/Intro/intro";
-import About from "./components/About/about";
-import Work from "./components/Work/work";
-import Contact from "./components/Contact/contact";
-import Footer from "./components/Footer/footer";
+import Navbar from './components/Navbar/navbar';
+import Intro from './components/Intro/intro';
+import About from './components/About/about';
+import Work from './components/Work/work';
+import Contact from './components/Contact/contact';
+import Footer from './components/Footer/footer';
 import './App.css';
-
-//import images
-import imageHome from "../src/assets/imageHome.webp";
-import imageAbout from "../src/assets/imageAbout.webp";
+import imageAbout from './assets/imageAbout.webp';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [works, setWorks] = useState([]); // State to hold preloaded work data
+  const [works, setWorks] = useState([]);
+  const [error, setError] = useState(null);
 
   // Preload images
   const preloadImages = (imageUrls) => {
-    imageUrls.forEach((imageUrl) => {
-      const img = new Image();
-      img.src = imageUrl;
-    });
+    return Promise.all(
+      imageUrls.map(
+        (imageUrl) =>
+          new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = reject;
+            img.src = imageUrl;
+          })
+      )
+    );
   };
 
   useEffect(() => {
-    // Preload statically imported images
-    const staticImageUrls = [imageHome, imageAbout];
-    preloadImages(staticImageUrls);
+    const initializeApp = async () => {
+      try {
+        // Preload About section image
+        await preloadImages([imageAbout]);
 
-    // Fetch work data from Sanity and preload images associated with each work item
-    const fetchWorkDataAndPreloadImages = async () => {
-      const query = '*[_type == "works"]';
-      const data = await client.fetch(query);
+        // Fetch work data from Sanity
+        const query = '*[_type == "works"]';
+        const data = await client.fetch(query);
 
-      // Extract image URLs from the fetched data
-      const workImageUrls = data.map(work => urlFor(work.imgUrl).url());
-      preloadImages(workImageUrls); // Preload work images
+        // Extract and preload work images
+        const workImageUrls = data.map((work) => urlFor(work.imgUrl).url());
+        await preloadImages(workImageUrls);
 
-      setWorks(data); // Store fetched work data in state
+        setWorks(data);
+        
+        // Wait for all greetings to complete (800ms first + 1200ms for 6 more = 2000ms)
+        await new Promise((resolve) => setTimeout(resolve, 2100));
+        
+        setLoading(false);
+      } catch (err) {
+        console.error('Failed to initialize app:', err);
+        setError('Failed to load content. Please refresh the page.');
+        setLoading(false);
+      }
     };
 
-    fetchWorkDataAndPreloadImages().then(() => {
-      // Set a timeout to simulate loading time
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
-    });
+    initializeApp();
   }, []);
+
+  if (error) {
+    return (
+      <div className="error-message">
+        <p>{error}</p>
+        <button onClick={() => window.location.reload()}>Retry</button>
+      </div>
+    );
+  }
 
   return (
     <>
       <div className={`loading-screen ${!loading ? 'slide-up' : ''}`}>
-        <LoadingScreen/>
+        <LoadingScreen />
       </div>
+      <a href="#intro" className="skip-link">
+        Skip to main content
+      </a>
       <div className="App">
-        <Navbar/>
-        <Intro/>
-        <About/>
-        <Work works={works}/>
-        <Contact/>
-        <Footer/>
+        <Navbar />
+        <main id="main-content">
+          <Intro />
+          <About />
+          <Work works={works} />
+          <Contact />
+        </main>
+        <Footer />
       </div>
     </>
   );

@@ -20,6 +20,41 @@
     font-family: var(--font-base);
 }
 
+.error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--primary-color);
+    color: var(--dark-green-color);
+    font-family: var(--font-base);
+    padding: 2rem;
+    text-align: center;
+}
+
+.error-message p {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin-bottom: 2rem;
+}
+
+.error-message button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-base);
+}
+
+.error-message button:hover {
+    background: var(--dark-green-color);
+    transform: scale(1.05);
+}
+
 .app__flex {
     display: flex;
     justify-content: center;

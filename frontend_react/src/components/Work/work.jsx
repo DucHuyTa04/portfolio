@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import { urlFor } from '../../client';
-import "./work.css";
+import './work.css';
 
-const Works = ({ works }) => {
+const Works = memo(({ works }) => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [animateCard, setAnimateCard] = useState({y:0, opacity:1});
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filterWork, setFilterWork] = useState(works);
 
   useEffect(() => {
@@ -15,14 +15,14 @@ const Works = ({ works }) => {
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
-    setAnimateCard([{y: 100, opacity:0}]);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
 
     setTimeout(() => {
-      setAnimateCard([{y: 0, opacity:1}]);
+      setAnimateCard([{ y: 0, opacity: 1 }]);
 
-      if(item === 'All'){
+      if (item === 'All') {
         setFilterWork(works);
-      } else{
+      } else {
         setFilterWork(works.filter((work) => work.tags && work.tags.includes(item)));
       }
     }, 500);
@@ -30,7 +30,7 @@ const Works = ({ works }) => {
 
   // Function to shorten tag names
   const getShortTagName = (tag) => {
-    switch(tag) {
+    switch (tag) {
       case 'Data Analysis':
         return 'DA';
       case 'Machine Learning':
@@ -38,7 +38,7 @@ const Works = ({ works }) => {
       default:
         return tag;
     }
-  }
+  };
 
   return (
     <section id="work">
@@ -64,40 +64,44 @@ const Works = ({ works }) => {
 
       {/* body */}
       <div className="bodywork">
-        <div className="app__flex workText"> Explore my work - each project is a testament of creativity, dedication, and passion.</div>
+        <div className="app__flex workText">Explore my work - each project is a testament of creativity, dedication, and passion.</div>
         <div className="workFilter app__flex">
-          {['All','Data Analysis','Machine Learning', 'Others'].map((item,index) => (
+          {['All', 'Data Analysis', 'Machine Learning', 'Others'].map((item, index) => (
             <div
               key={index}
               onClick={() => handleWorkFilter(item)}
               className={`workFilterItem app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
-              >
-                {item}
+            >
+              {item}
             </div>
           ))}
         </div>
 
         <motion.div
           animate={animateCard}
-          transition={{duration:0.2, ease: 'easeInOut'}}
-          className='workPortfolio'
+          transition={{ duration: 0.2, ease: 'easeInOut' }}
+          className="workPortfolio"
         >
-          {filterWork.map((work,index) => (
+          {filterWork.map((work, index) => (
             <div className="workItem app__flex" key={index}>
-            <div className="workImg app__flex">
-              <img src={urlFor(work.imgUrl).url()} alt={work.title} />
+              <div className="workImg app__flex">
+                <img 
+                  src={urlFor(work.imgUrl).url()} 
+                  alt={`Screenshot of ${work.title} project`} 
+                  loading="lazy"
+                />
 
                 <motion.div
-                  whileHover={{opacity: [0,1]}}
-                  transition={{ duration: 0.15, ease: 'easeInOut', staggerChildren: 0.5}}
-                  className='workHover app__flex'
+                  whileHover={{ opacity: [0, 1] }}
+                  transition={{ duration: 0.15, ease: 'easeInOut', staggerChildren: 0.5 }}
+                  className="workHover app__flex"
                 >
                   <a href={work.projectLink} target="_blank" rel="noreferrer">
                     <motion.div
-                      whileInView={{scale: [0,1]}}
+                      whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}
                       transition={{ duration: 0.25 }}
-                      className='app__flex'
+                      className="app__flex"
                     >
                       <AiFillEye/>
                     </motion.div>
@@ -130,7 +134,9 @@ const Works = ({ works }) => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+});
+
+Works.displayName = 'Works';
 
 export default Works;

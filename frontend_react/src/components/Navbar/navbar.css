@@ -137,6 +137,24 @@
     background-color: var(--dark-green-color);
 }
 
+.smallMenu .menu-button {
+    background: none;
+    border: none;
+    color: var(--white-color);
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.smallMenu .menu-button:hover {
+    color: var(--primary-color);
+}
+
 .smallMenu .menuOverlay {
     position: fixed;
     top: 0;

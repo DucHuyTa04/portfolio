@@ -1,17 +1,15 @@
 import React from 'react';
 import './about.css';
-import { GrAnalytics } from "react-icons/gr";
-import { LuBrainCircuit } from "react-icons/lu";
-import portrait from "../../assets/imageAbout.webp"
+import { GrAnalytics, GrMysql } from 'react-icons/gr';
+import { LuBrainCircuit } from 'react-icons/lu';
+import { PiMicrosoftExcelLogoDuotone } from 'react-icons/pi';
+import { SiPowerbi, SiPython } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
+import portrait from '../../assets/imageAbout.webp';
 
-import { GrMysql } from "react-icons/gr";
-import { PiMicrosoftExcelLogoDuotone } from "react-icons/pi";
-import { SiPowerbi, SiPython } from "react-icons/si";
-import { FaJava } from "react-icons/fa6";
-
-const about = () => {
+const About = () => {
   return (
     <section id="about">
       <div className="carousel">
@@ -58,8 +56,9 @@ const about = () => {
                   e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke';
                   e.currentTarget.querySelector('span').style.color = 'whitesmoke'; 
                 }}
+                aria-label="View Data Analysis projects"
               >
-                <GrAnalytics color="whitesmoke" className="iconAbout" />
+                <GrAnalytics color="whitesmoke" className="iconAbout" aria-hidden="true" />
                 <span>Data <br /> Analysis</span>
               </motion.button>
             </Link>
@@ -76,15 +75,23 @@ const about = () => {
                   e.currentTarget.querySelector('.iconAbout').style.color = 'whitesmoke';
                   e.currentTarget.querySelector('span').style.color = 'whitesmoke'; 
                 }}
+                aria-label="View Machine Learning projects"
               >
-                <LuBrainCircuit color="whitesmoke" className="iconAbout" />
+                <LuBrainCircuit color="whitesmoke" className="iconAbout" aria-hidden="true" />
                 <span>Machine <br /> Learning</span>
               </motion.button>
             </Link>
           </div>
         </div>
         <div className="imageAbout">
-          <img src={portrait} alt="A portrait" className="imgIntro" />
+          <img 
+            src={portrait} 
+            alt="Portrait of Duc Huy Ta, Computer Science student" 
+            className="imgIntro" 
+            loading="lazy"
+            width="400"
+            height="500"
+          />
         </div>
       </div>
       <div className="mySkills">
@@ -114,6 +121,6 @@ const about = () => {
       </div>
     </section>
   );
-}
+};
 
-export default about;
+export default About;

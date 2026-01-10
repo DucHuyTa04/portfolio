@@ -1,8 +1,8 @@
 import React from 'react';
 import './intro.css';
-import { CiLocationOn } from "react-icons/ci";
+import { CiLocationOn } from 'react-icons/ci';
 
-const intro = () => {
+const Intro = () => {
   return (
     <section id="intro">
       <div className="introContent">
@@ -15,6 +15,7 @@ const intro = () => {
               <a
                 href="https://www.google.com/maps/place/Montreal,+QC/@45.5587087,-74.0415125,10z/data=!3m1!4b1!4m6!3m5!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5018869!4d-73.5673919!16zL20vMDUycDc?entry=ttu"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <CiLocationOn
                   color="whitesmoke"
@@ -34,9 +35,8 @@ const intro = () => {
         </div>
       </div>
       <div className="bigName">Duc Huy Ta</div>
-      
     </section>
   );
-}
+};
 
-export default intro;
+export default Intro;

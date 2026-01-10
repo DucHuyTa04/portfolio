@@ -3,10 +3,8 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import './contact.css';
 
-
-
 const Contact = () => {
-  const [formData, setFormData] = useState({name:'', email:'', message:''});
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [currentTime, setCurrentTime] = useState('');
@@ -53,45 +51,59 @@ const Contact = () => {
     const intervalId = setInterval(updateCurrentTimeAndMessage, 60000); // Update every minute
   
     return () => clearInterval(intervalId);
-  }, []);  
+  }, []);
 
-  const{ name, email, message } = formData;
+  const { name, email, message } = formData;
+
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
-    setFormData({...formData, [name]: value});
-  }
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (!name.trim() || !email.trim() || !message.trim()) {
-      alert("Can you please fill in all 3 fields");
-      setLoading(false);
+      alert('Please fill in all 3 fields');
       return;
     }
-  
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
     setLoading(true);
-  
-    emailjs.send(
-      'service_qdr2xyk', 
-      'template_0ywetnj',
-      {
-        from_name: name,
-        to_name: 'Huy',
-        from_email: email,
-        to_email: 'taduchuy04@gmail.com',
-        message: message,
-      }, 'HIYHxB3YNYwjpatD1'
-    )
-    .then(() => {
-      setLoading(false);
-      setIsFormSubmitted(true);
-    }, (error) => {
-      setLoading(false);
-      console.log(error);
-      alert('Something is wrong.');
-    });
-  }
+
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: name,
+          to_name: 'Huy',
+          from_email: email,
+          to_email: 'taduchuy04@gmail.com',
+          message: message,
+        },
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setIsFormSubmitted(true);
+        },
+        (error) => {
+          setLoading(false);
+          console.error('Email sending failed:', error);
+          alert(
+            'Failed to send message. Please try again or contact me directly at taduchuy04@gmail.com'
+          );
+        }
+      );
+  };
   
 
   return (
@@ -121,33 +133,68 @@ const Contact = () => {
       <p className="p-text headTextDetails" >{messageBasedOnTime}</p>
     
 
-    {! isFormSubmitted ?
-      <div className="contactForm app__flex">
+    {!isFormSubmitted ? (
+      <form className="contactForm app__flex" onSubmit={handleSubmit} aria-label="Contact form">
         <div className="app__flex">
-          <input type="text" className="p-text" placeholder='Your full name' name='name' value ={name} onChange={handleChangeInput}/>
+          <label htmlFor="contact-name" className="sr-only">Your full name</label>
+          <input 
+            type="text" 
+            id="contact-name"
+            className="p-text" 
+            placeholder="Your full name" 
+            name="name" 
+            value={name} 
+            onChange={handleChangeInput}
+            required
+            aria-required="true"
+          />
         </div>
         <div className="app__flex">
-          <input type="email" className="p-text" placeholder='Your email' name='email' value ={email} onChange={handleChangeInput}/>
+          <label htmlFor="contact-email" className="sr-only">Your email</label>
+          <input 
+            type="email" 
+            id="contact-email"
+            className="p-text" 
+            placeholder="Your email" 
+            name="email" 
+            value={email} 
+            onChange={handleChangeInput}
+            required
+            aria-required="true"
+          />
         </div>
-        <div className='textAreaCover'>
+        <div className="textAreaCover">
+          <label htmlFor="contact-message" className="sr-only">Your message</label>
           <textarea 
+            id="contact-message"
             className="p-text" 
             placeholder="What's on your mind?"
             value={message}
             name="message"
             onChange={handleChangeInput}
-            />
+            required
+            aria-required="true"
+          />
         </div>
-        <motion.button whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2, type: "tween" }} type="button" className='p-text' onClick={handleSubmit}>{loading ? 'Sending' : 'Send Message'}</motion.button>
+        <motion.button 
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2, type: "tween" }} 
+          type="submit" 
+          className="p-text"
+          disabled={loading}
+          aria-label={loading ? 'Sending message' : 'Send message'}
+        >
+          {loading ? 'Sending...' : 'Send Message'}
+        </motion.button>
+      </form>
+    ) : (
+      <div role="alert" aria-live="polite">
+        <p className="textAfterSubmit">Thank you for getting in touch!</p>
       </div>
-      :
-      <div>
-        <p className='textAfterSubmit'>Thank you for getting in touch!</p>
-      </div>}
+    )}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

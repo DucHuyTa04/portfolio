@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import './footer.css';
-import { FaGithub } from "react-icons/fa";
-import { FaRegCopyright } from "react-icons/fa6";
-import { IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
+import { FaGithub } from 'react-icons/fa';
+import { FaRegCopyright } from 'react-icons/fa6';
+import { IoLogoLinkedin, IoLogoInstagram } from 'react-icons/io5';
 
-const footer = () => {
+const Footer = () => {
   return (
     <div className="footer">
         <div className="footerCover">
@@ -26,7 +26,7 @@ const footer = () => {
             </div>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default footer
+export default Footer;

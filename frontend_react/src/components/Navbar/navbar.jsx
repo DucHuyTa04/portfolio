@@ -55,10 +55,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <a className="homePage" href="/" >
+    <nav className="navbar" role="navigation" aria-label="Main navigation">
+      <a className="homePage" href="/" aria-label="Home - Duc Huy Ta">
         <span className="logoSection">
-          <img src={logo} alt="logo" className="logo" />
+          <img src={logo} alt="Duc Huy Ta logo" className="logo" />
           <div className="name">
             <span className="codeBy">Code by</span>
             <span className="duc">Duc</span>
@@ -68,21 +68,41 @@ const Navbar = () => {
         </span>
       </a>
 
-      <ul className="navbarLinks">
+      <ul className="navbarLinks" role="menubar">
         {["about", "work", "contact"].map((item) => (
-          <li key={`link-${item}`} className={activeSection === item ? 'active' : ''}>
-            <a href={`#${item}`} onClick={(e) => handleClick(e, item)}
-              className={item === 'work' ? 'workClass' : ''}>{item}</a>
+          <li key={`link-${item}`} className={activeSection === item ? 'active' : ''} role="none">
+            <a 
+              href={`#${item}`} 
+              onClick={(e) => handleClick(e, item)}
+              className={item === 'work' ? 'workClass' : ''}
+              role="menuitem"
+              aria-label={`Navigate to ${item} section`}
+              aria-current={activeSection === item ? 'page' : undefined}
+            >
+              {item}
+            </a>
             <div />
           </li>
         ))}
       </ul>
 
       <div className="smallMenu">
-        <IoIosMenu onClick={() => setToggle(true)}></IoIosMenu>
+        <button 
+          onClick={() => setToggle(true)}
+          aria-label="Open navigation menu"
+          aria-expanded={toggle}
+          className="menu-button"
+        >
+          <IoIosMenu />
+        </button>
 
         {toggle && (
-          <div className="menuOverlay" onClick={() => setToggle(false)}></div>
+          <div 
+            className="menuOverlay" 
+            onClick={() => setToggle(false)}
+            role="presentation"
+            aria-hidden="true"
+          />
         )}
 
         <AnimatePresence>
@@ -92,11 +112,18 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100vw" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
+              role="dialog"
+              aria-label="Mobile navigation menu"
             >
-              <ul>
+              <ul role="menu">
                 {["about", "work", "contact"].map((item) => (
-                  <li key={item}>
-                    <a href={`#${item}`} onClick={(e) => handleClick(e, item)}>
+                  <li key={item} role="none">
+                    <a 
+                      href={`#${item}`} 
+                      onClick={(e) => handleClick(e, item)}
+                      role="menuitem"
+                      aria-label={`Navigate to ${item} section`}
+                    >
                       {item}
                     </a>
                   </li>
